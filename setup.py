@@ -33,11 +33,11 @@ def install_torch():
     except ImportError:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "torch"])
 
+from setuptools import find_packages, setup
 # Call the function to ensure torch is installed
 install_torch()
 
 import torch
-from setuptools import find_packages, setup
 from torch.utils.cpp_extension import CUDA_HOME, CppExtension, CUDAExtension
 
 # groundingdino version info
